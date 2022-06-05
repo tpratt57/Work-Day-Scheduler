@@ -2,11 +2,6 @@
 var todaysDate = moment().format("MMMM Do, YYYY - hh:mm:ss a");
 $("#currentDay").html(todaysDate);
 
-//function to track local time so css can display past, present, and future
-
-
-//function to save button click, save text in local storage & get values of description in JQuery
-
 $(document).ready(function () {
     //"click" listener for saveBtn
     $(".saveBtn").on("click", function () {
@@ -19,32 +14,45 @@ $(document).ready(function () {
     })
 
     function getCurrentTime() {
-    //get current hour time
-    var currentTime = moment().hour();
+        //get current hour time
+        var currentTime = moment().hour();
 
-    //loop through time blocks
-    $(".time-block").each(function () {
-        var timeBlock = parseInt($(this).attr("id").split("hour")[1]);
+        //loop through time blocks
+        $(".time-block").each(function () {
+            var blockTime = parseInt($(this).attr("id").split("hour")[1]);
 
-        //check time and add classes for background
-        if (timeBlock < currentTime) {
-            $(this).addClass("past");
-            $(this).removeClass("present");
-            $(this).removeClass("future");
-        }
-        else if (timeBlock === currentTime) {
-            $(this).removeClass("past");
-            $(this).addClass("present");
-            $(this).removeClass("future");
-        }
-        else {
-            $(this).removeClass("past");
-            $(this).removeClass("present");
-            $(this).addClass("future");
-        }
-    });
-}
-getCurrentTime();
+            //check time and add classes for background
+            if (blockTime < currentTime) {
+                $(this).addClass("past");
+                $(this).removeClass("present");
+                $(this).removeClass("future");
+            }
+            else if (blockTime === currentTime) {
+                $(this).removeClass("past");
+                $(this).addClass("present");
+                $(this).removeClass("future");
+            }
+            else {
+                $(this).removeClass("past");
+                $(this).removeClass("present");
+                $(this).addClass("future");
+            }
+        });
+    }
+    //retrieve and display item/s from local storage (if applicable)
+    $("#8AM-Hour".description).val(localStorage.getItem("#8AM-Hour"));
+    $("#9AM-Hour".description).val(localStorage.getItem("#9AM-Hour"));
+    $("#10AM-Hour".description).val(localStorage.getItem("#10AM-Hour"));
+    $("#11AM-Hour".description).val(localStorage.getItem("#11AM-Hour"));
+    $("#12PM-Hour".description).val(localStorage.getItem("#12PM-Hour"));
+    $("#1PM-Hour".description).val(localStorage.getItem("#1PM-Hour"));
+    $("#2PM-Hour".description).val(localStorage.getItem("#2PM-Hour"));
+    $("#3PM-Hour".description).val(localStorage.getItem("#3PM-Hour"));
+    $("#4PM-Hour".description).val(localStorage.getItem("#4PM-Hour"));
+    $("#5PM-Hour".description).val(localStorage.getItem("#5PM-Hour"));
+
+    console.log(getCurrentTime);
+    getCurrentTime();
 });
 
 
