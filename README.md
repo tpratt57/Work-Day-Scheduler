@@ -27,8 +27,12 @@ THEN the saved events persist
 
 The following animation demonstrates the application functionality:
 
+![05-third-party-apis-homework-demo](https://user-images.githubusercontent.com/104174101/172074069-dd9e3d9a-0765-40d3-86a0-1996c0fa5a70.gif)
+
 
 ## Screenshot
+
+![Desktop Screenshot 2022 06 05 - 17 55 49 14](https://user-images.githubusercontent.com/104174101/172074085-755edbc8-c2e4-4de1-a7ab-5ba1b1695142.png)
 
 
 ## Contributor 
